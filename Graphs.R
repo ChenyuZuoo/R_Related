@@ -58,3 +58,31 @@ axis(4, at = z, labels = round(z, digits = 2), col.axis = "blue", las = 2, cex.a
 mtext("z = 10/x", side = 4, line = 3,  cex.lab = 1, las = 2, col = "blue")
 mtext("y = x", side = 2, line = 2, cex.lab = 1, las = 0, col = "red")
 title("An test of axes", xlab = "X Values")
+
+#legend
+plot(dose, durgA, pch = 15, lty = 1, type = "b", ylim = c(0,60), main = "drugA VS drugB", xlab = "dosage", ylab = "Drug Response", col = "blue")
+lines(dose, durgB, pch = 17, lty = 2, type = "b", col = "green")
+abline(h = 30, lty = 2, col = "gray", pch = 17)
+
+library(Hmisc)
+minor.tick(nx = 3, ny = 3) #add minor ticks
+
+legend("topleft", title = "Durg Type", inset = .05, c("A", "B"), lty = c(1, 2), pch = c(15,17), col = c("blue", "green"))
+
+#text annotation
+attach(mtcars)
+head(mtcars)
+plot(wt, mpg, main = "Mileage VS Car Weight", xlab = "Weight", ylab = "Mileage", pch = 17, col = "blue")
+text(wt, mpg, row.names(mtcars), cex = 0.6, pos = 4)
+
+
+
+#reset par(), par() will reset in a new device
+resetPar <- function(){
+  dev.new()
+  op <- par(no.readonly = TRUE)
+  dev.off()
+  op
+}
+
+par(resetPar())
