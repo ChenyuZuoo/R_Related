@@ -74,6 +74,8 @@ attach(mtcars)
 head(mtcars)
 plot(wt, mpg, main = "Mileage VS Car Weight", xlab = "Weight", ylab = "Mileage", pch = 17, col = "blue")
 text(wt, mpg, row.names(mtcars), cex = 0.6, pos = 4)
+detach(mtcars)
+
 
 
 
