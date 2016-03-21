@@ -32,3 +32,37 @@ as.array(a)
 leadershipAge1 <- leadership[order(leadership$age),]
 leadershipAge1 <- leadership[order(leadership$gender,leadership$age),]
 leadershipAge1 <- leadership[order(leadership$gender,-leadership$age),]
+
+
+#numerical functions
+abs(x)
+sqrt(x)
+x <- 34.532246
+ceiling(x)
+floor(x)
+round(x, digits = 2)
+signif(x, digits = 3) #round number to significant digits
+sin(x)
+cos(x)
+tan(x)
+sqrt(c(2,3,4))
+
+#statistical functions
+x <- c(1,2,3,4,5,6,7,8,9)
+mean(x)
+max(x)
+min(x)
+quantile(x)
+quantile(x, .60)
+range(x)
+sum(x)
+scale(x)
+scale(x, center = 0, scale = 10)
+length(x)
+#standarizing data
+newdata <- scale(x)
+newdata <- scale(x)*SD +M #SD is desired standard deviation and M is mean
+#standard a special column
+newdata <- transform(myData, myvar = scale(myvar)*SD + M)
+
+#
