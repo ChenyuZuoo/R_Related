@@ -64,5 +64,3 @@ newdata <- scale(x)
 newdata <- scale(x)*SD +M #SD is desired standard deviation and M is mean
 #standard a special column
 newdata <- transform(myData, myvar = scale(myvar)*SD + M)
-
-#
